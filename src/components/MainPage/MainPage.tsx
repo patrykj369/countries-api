@@ -5,6 +5,7 @@ import {device} from './../../styledHelpers/deviceWidth';
 import {colors} from './../../styledHelpers/colors';
 import { Navbar } from '../Navbar/Navbar';
 import { Searchbar} from '../Searchbar/Searchbar';
+import { Filterbar} from '../Filterbar/Filterbar';
 
 const MyComponent = styled.div`
     min-height: 100vh;
@@ -19,6 +20,11 @@ const MyComponent = styled.div`
         justify-content: center;
         margin-top: 1.5rem;
     }
+
+    .filterbar{
+        margin-top: 2rem;
+        margin-left: 5vw;
+    }
 `;
 
 
@@ -30,6 +36,11 @@ export const MainPage: FC = () => {
             <div className="searchbar">
                 <Searchbar/>
             </div>
+
+            <div className="filterbar">
+               <Filterbar></Filterbar>
+            </div>
+
 
         </MyComponent>
     )

@@ -10,7 +10,6 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     padding: 0 .5rem;
-    border: none;
     box-shadow: 0px 2px 7px -1px rgb(185, 185, 185);
     background-color: ${colors.whiteDMLM};
 
