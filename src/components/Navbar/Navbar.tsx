@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import styled from 'styled-components';
 
 //import {device} from './../../styledHelpers/deviceWidth';
-import {fontSize} from './../../styledHelpers/fontSize';
+// import {fontSize} from './../../styledHelpers/fontSize';
 import {colors} from './../../styledHelpers/colors';
 
 const Wrapper = styled.div`
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    font-size: ${fontSize[16]};
+    font-size: 4vw;
 
     box-shadow: 0px 2px 7px -1px rgb(185, 185, 185);
 
@@ -25,13 +25,13 @@ const Wrapper = styled.div`
     .btn-dark-mode{
         display: flex;
         align-items: center;
-        font-size: .95rem;
+        font-size: 4vw;
         font-weight: 600;
         border: none;
         background-color: transparent;
 
         img{
-            height: ${fontSize[16]};
+            height: 4vw;
             margin-right: 10px;
         }
     }

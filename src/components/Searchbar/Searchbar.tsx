@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import styled from 'styled-components';
-import { fontSize } from '../../styledHelpers/fontSize';
+// import { fontSize } from '../../styledHelpers/fontSize';
 import {colors} from './../../styledHelpers/colors';
 
 const Wrapper = styled.div`
@@ -16,12 +16,12 @@ const Wrapper = styled.div`
     input {
         height: 7.8vh;
         width: 70%;
-        font-size: ${fontSize[16]};
+        font-size: 5vw;
         border: none;
     }
 
     img {
-        height: 1.3rem;
+        height: 5vw;
         margin-right: .5rem;
     }
 `;
