@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import styled from 'styled-components'
 import { colors } from '../../styledHelpers/colors';
 
-import {device} from './../../styledHelpers/deviceWidth'
+// import {device} from './../../styledHelpers/deviceWidth'
 
 const Wrapper = styled.div`
     width: 75vw;
