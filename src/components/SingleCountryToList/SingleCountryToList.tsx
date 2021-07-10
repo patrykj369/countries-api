@@ -8,14 +8,15 @@ const Wrapper = styled.div`
     width: 75vw;
     height: 50vh;
     border-radius: 8px;
+    box-shadow: 0px 2px 7px -1px rgb(185, 185, 185);
 `;
 
 const Flag = styled.div`
     height: 50%;
-    background-color: aqua;
     border-radius: 8px 8px 0 0;
 
     img{
+        height: 100%;
         width: 100%;
         border-radius: 8px 8px 0 0;
     }
@@ -25,15 +26,27 @@ const Info = styled.div`
     height: 50%;
     background-color: ${colors.whiteDMLM};
     border-radius: 0 0 8px 8px;
+    padding: 4vh;
+
+    span{
+        font-weight: 600;
+    }
 `;
 
 const Country = styled.h1`
-
+    font-size: 5.5vw;
+    margin-bottom: 2vh;
 `;
 
-const Population = styled.p``;
-const Region = styled.p``;
-const Capital = styled.p``;
+const Population = styled.p`
+    margin: 1vh 0;
+`;
+const Region = styled.p`
+    margin: 1vh 0;
+`;
+const Capital = styled.p`
+    margin: 1vh 0;
+`;
 
 interface props {
     flagUrl: string,
@@ -52,9 +65,9 @@ export const SingleCountryToList: FC<props> = (props) => {
             </Flag>
             <Info>
                 <Country>{props.nameCountry}</Country>
-                <Population>{props.population}</Population>
-                <Region>{props.region}</Region>
-                <Capital>{props.capital}</Capital>
+                <Population><span>Population: </span>{props.population}</Population>
+                <Region><span>Region: </span>{props.region}</Region>
+                <Capital><span>Capital: </span>{props.capital}</Capital>
             </Info>
         </Wrapper>
     )

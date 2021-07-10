@@ -16,13 +16,13 @@ const Wrapper = styled.div`
     input {
         height: 7.8vh;
         width: 70%;
-        font-size: 5vw;
+        font-size: 4vw;
         border: none;
     }
 
     img {
         height: 5vw;
-        margin-right: .5rem;
+        margin-right: 1.5rem;
     }
 `;
 
