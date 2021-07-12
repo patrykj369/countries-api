@@ -1,4 +1,4 @@
-import React, {FC, useEffect} from 'react';
+import React, {FC} from 'react';
 import styled from 'styled-components';
 
 import {device} from './../../styledHelpers/deviceWidth';
@@ -7,16 +7,6 @@ import { Navbar } from '../Navbar/Navbar';
 import { Searchbar} from '../Searchbar/Searchbar';
 import { Filterbar} from '../Filterbar/Filterbar';
 import { SingleCountryToList } from '../SingleCountryToList/SingleCountryToList';
-
-
-// importy reduxa
-
-import { getCountries } from '../../app/countries/action/actions';
-import { useDispatch, useSelector } from 'react-redux';
-import { ICountriesReducer } from '../../app/countries/reducers/reducers';
-import {IState} from "../../app/countries/index"
-
-type GetCountries = ReturnType<typeof getCountries>;
 
 
 const MyComponent = styled.div`
@@ -48,20 +38,6 @@ const MyComponent = styled.div`
 
 
 export const MainPage: FC = () => {
-
-    const {countriesList } = useSelector<IState, ICountriesReducer>(state => ({
-        ...state.countries,
-    }));
-
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch<GetCountries>(getCountries());
-
-    }, [dispatch])
-
-        console.log(countriesList);
-
 
 
     return (
