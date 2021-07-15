@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
 import styled from 'styled-components';
 
 import {device} from './../../styledHelpers/deviceWidth';
@@ -7,6 +7,8 @@ import { Navbar } from '../Navbar/Navbar';
 import { Searchbar} from '../Searchbar/Searchbar';
 import { Filterbar} from '../Filterbar/Filterbar';
 import { SingleCountryToList } from '../SingleCountryToList/SingleCountryToList';
+import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
+import { fetchData } from '../../app/actions/countriesAction';
 
 
 const MyComponent = styled.div`
@@ -34,11 +36,25 @@ const MyComponent = styled.div`
         justify-content: center;
     }
 
+    .single-card{
+        margin-bottom: 5vh;
+    }
+
 `;
 
 
 export const MainPage: FC = () => {
+     const {data} = useSelector((state: RootStateOrAny) => state.getCountries);
 
+    const dispatch = useDispatch();
+
+
+    useEffect(()=>{
+      dispatch(fetchData());
+    }, [dispatch])
+
+
+    console.log(data)
 
     return (
         <MyComponent>
@@ -53,13 +69,25 @@ export const MainPage: FC = () => {
             </div>
 
             <div className="countries-cards">
-                <SingleCountryToList
-                    flagUrl= "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/1920px-Flag_of_Germany.svg.png"
-                    nameCountry = "test"
-                    population = "81,770,900"
-                    region = "Europe"
-                    capital = "Berlin"
-                />
+                <div>
+                    {
+                        data?.map((data: any)=>{
+                            return(
+                                <div className="single-card" key={"key"+ data.alpha3Code}>
+                                    <SingleCountryToList
+                                        flagUrl= {data.flag}
+                                        nameCountry = "test"
+                                        population = "81,770,900"
+                                        region = "Europe"
+                                        capital = "Berlin"
+                                    />
+                                </div>
+                            )
+
+                        })
+                    }
+                </div>
+
             </div>
 
 
