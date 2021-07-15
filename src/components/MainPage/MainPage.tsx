@@ -8,7 +8,7 @@ import { Searchbar} from '../Searchbar/Searchbar';
 import { Filterbar} from '../Filterbar/Filterbar';
 import { SingleCountryToList } from '../SingleCountryToList/SingleCountryToList';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
-import { fetchData } from '../../app/actions/countriesAction';
+import { fetchData} from '../../app/actions/countriesAction';
 
 
 const MyComponent = styled.div`
@@ -37,7 +37,7 @@ const MyComponent = styled.div`
     }
 
     .single-card{
-        margin-bottom: 5vh;
+        margin-bottom: 6vh;
     }
 
 `;
@@ -76,10 +76,10 @@ export const MainPage: FC = () => {
                                 <div className="single-card" key={"key"+ data.alpha3Code}>
                                     <SingleCountryToList
                                         flagUrl= {data.flag}
-                                        nameCountry = "test"
-                                        population = "81,770,900"
-                                        region = "Europe"
-                                        capital = "Berlin"
+                                        nameCountry = {data.name}
+                                        population = {data.population}
+                                        region = {data.region}
+                                        capital = {data.capital}
                                     />
                                 </div>
                             )

@@ -6,17 +6,17 @@ import { colors } from '../../styledHelpers/colors';
 
 const Wrapper = styled.div`
     width: 75vw;
-    height: 50vh;
+    min-height: 50vh;
     border-radius: 8px;
     box-shadow: 0px 2px 7px -1px rgb(185, 185, 185);
 `;
 
 const Flag = styled.div`
-    height: 50%;
+    height: 25vh;
     border-radius: 8px 8px 0 0;
 
     img{
-        height: 100%;
+        height: 25vh;
         width: 100%;
         border-radius: 8px 8px 0 0;
     }

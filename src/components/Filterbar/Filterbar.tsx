@@ -1,5 +1,7 @@
 import React, {FC} from 'react';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import { fetchData, fetchDataAfrica, fetchDataAmerica, fetchDataAsia, fetchDataEurope, fetchDataOceania } from '../../app/actions/countriesAction';
 
 import {colors} from './../../styledHelpers/colors';
 // import { fontSize } from '../../styledHelpers/fontSize';
@@ -73,6 +75,37 @@ const showFilter = () => {
 }
 
 export const Filterbar: FC = () => {
+
+    const dispatch = useDispatch();
+
+    const getAfricaCountries = (region: string) => {
+        switch(region){
+            case "Africa":
+                dispatch(fetchDataAfrica());
+                showFilter();
+                break;
+            case "America":
+                dispatch(fetchDataAmerica());
+                showFilter();
+                break;
+            case "Asia":
+                dispatch(fetchDataAsia());
+                showFilter();
+                break;
+            case "Europe":
+                dispatch(fetchDataEurope());
+                showFilter();
+                break;
+            case "Oceania":
+                    dispatch(fetchDataOceania());
+                    showFilter();
+                    break;
+            default:
+                dispatch(fetchData())
+        }
+
+    }
+
     return(
         <Wrapper>
             <div className="filterbar" onClick={showFilter}>
@@ -81,11 +114,11 @@ export const Filterbar: FC = () => {
             </div>
 
             <div id="filtersID" className="container-disactive">
-                <button>Africa</button>
-                <button>America</button>
-                <button>Asia</button>
-                <button>Europe</button>
-                <button>Oceania</button>
+                <button onClick={() => getAfricaCountries("Africa")}>Africa</button>
+                <button onClick={() => getAfricaCountries("America")}>America</button>
+                <button onClick={() => getAfricaCountries("Asia")}>Asia</button>
+                <button onClick={() => getAfricaCountries("Europe")}>Europe</button>
+                <button onClick={() => getAfricaCountries("Oceania")}>Oceania</button>
             </div>
         </Wrapper>
 
